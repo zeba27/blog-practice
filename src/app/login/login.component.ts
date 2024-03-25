@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
+import {FormControl, FormsModule, Validators} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 
 
@@ -13,5 +13,7 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+  email = new FormControl('', [Validators.required, Validators.email]);
+
 
 }

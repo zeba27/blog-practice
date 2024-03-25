@@ -1,0 +1,34 @@
+<div class="bg">
+    <div class="container">
+      <a mat-raised-button color="accent" href="/add-blog">Add Blog</a>
+      <a mat-raised-button color="accent" href="/home">Blog List</a>
+    </div>
+    <div class="input">
+      <form class="task-form" [formGroup]="blogForm" (ngSubmit)="addBlog()">
+      <mat-form-field>
+        <mat-label>Blog Title</mat-label>
+        <input matInput type="text" formControlName="title" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label> User Name </mat-label>
+        <input matInput type="text" formControlName="userName" />
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Blog Description</mat-label>
+        <textarea matInput type="text" formControlName="description"> </textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Blog Category</mat-label>
+        <mat-select formControlName="category">
+          @for (category of categoriesOfBlog; track $index) {
+          <mat-option [value]="category">{{ category }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    
+      <button type="submit">Submit</button>
+    </form>
+    </div>
+  
+  </div>

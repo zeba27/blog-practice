@@ -1,0 +1,29 @@
+:host {
+    .task-form {
+      margin-inline: 100px;
+      margin-block: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: min(100%, 300px);
+    }
+    .toggle-group {
+      max-width: min-content;
+    }
+  .container{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  .bg{
+    background-color: antiquewhite;
+    height: 100%;
+  }
+  .input {
+    font-size: 130%;
+    color: rgb(215, 152, 70);
+    display: flex;
+    justify-content: center;
+  }
+  
+  }
