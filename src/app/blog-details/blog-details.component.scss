@@ -1,0 +1,14 @@
+:host {
+    .container{
+        display: flex;
+        justify-content: center;
+    }
+    .all-blogs {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 800px;
+        margin-inline: auto;
+        margin-top: 24px;
+      }
+    }

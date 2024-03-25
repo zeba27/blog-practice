@@ -1,14 +1,20 @@
 :host {
+    .all-tasks {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 800px;
+      margin-inline: auto;
+      margin-top: 24px;
+    }
     .container{
-        display: flex;
-        justify-content: center;
-    }
-    .all-blogs {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        width: 800px;
-        margin-inline: auto;
-        margin-top: 24px;
-      }
-    }
+      display: flex;
+      justify-content: center;
+      padding-top: 20px;
+  }
+  .bg{
+    background-color: antiquewhite;
+    height: 100%;
+  }
+  
+  }
