@@ -1,9 +1,9 @@
-<div class="bg">
+<div>
     <div class="container">
-      <a mat-raised-button color="accent" href="/add-blog">Add Blog</a>
-      <a mat-raised-button color="accent" href="/home">Blog List</a>
+      <a mat-raised-button style="margin-right: 25px" href="/add-blog">Add Blog</a>
+      <a mat-raised-button href="/home">Blog List</a>
     </div>
-    <div class="all-tasks">
+    <div class="all-blogs">
       @for(blog of allBlogs; track $index){
       <app-blog-details [blog]="blog" (blogDeleted)="deleteBlog($event)"></app-blog-details>
       }

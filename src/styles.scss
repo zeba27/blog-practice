@@ -39,3 +39,8 @@ $blog_practice-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  background-color: rgba(176, 247, 223, 0.897);/* Adjust the path to your image */
+  background-size: cover; /* This ensures the image covers the entire background */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+}
