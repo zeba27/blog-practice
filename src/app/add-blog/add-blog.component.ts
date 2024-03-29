@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { JsonPipe } from '@angular/common';
-import { FormBuilder,ReactiveFormsModule, } from '@angular/forms';
+import { FormBuilder,FormGroup,ReactiveFormsModule, } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -9,7 +9,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { BlogService } from '../blog.service';
 import { Blog } from '../blog.interface';
-import { Router, RouterModule } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-add-blog',
@@ -22,30 +23,39 @@ import { Router, RouterModule } from '@angular/router';
     MatDatepickerModule,
     MatButtonToggleModule,
     MatButtonModule,
-    RouterModule,],
+    RouterModule,RouterLink],
   templateUrl: './add-blog.component.html',
   styleUrl: './add-blog.component.scss'
 })
-export class AddBlogComponent {
+export class AddBlogComponent implements OnInit {
   categoriesOfBlog= ['Sports', 'Entertainment', 'Business' , 'Health'];
   title: any;
+  blogForm: any;
   
     constructor(
       private formBuilder: FormBuilder,
       private blogService: BlogService,
       private router: Router
     ) {}
-    blogForm = this.formBuilder.group({
-      title: '',
-      userName: '',
-      description: '',
-      category: '',
-      status: '',
-    });
+  ngOnInit(): void {
+    this.initForm();
+  }
+    
   
     addBlog() {
       this.blogService.addBlog(this.blogForm.value as Blog).subscribe((res) => {
         this.router.navigateByUrl('/home');
       });
+    }
+
+    initForm() {
+      this.blogForm = this.formBuilder.group({
+        title: '',
+        userName: '',
+        description: '',
+        category: '',
+        status: '',
+      });
+      
     }
 }

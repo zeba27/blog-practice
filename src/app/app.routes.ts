@@ -6,7 +6,7 @@ import {BlogDetailsComponent} from './blog-details/blog-details.component';
 import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
-    {path:'',component:LoginComponent},
+    {path:'login',component:LoginComponent},
     {path:'signup',component:SignupComponent},
     {path:'blog-details',component:BlogDetailsComponent},
     {path:'add-blog',component:AddBlogComponent},

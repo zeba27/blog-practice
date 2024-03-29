@@ -8,12 +8,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field'
-import {Params, RouterModule} from '@angular/router';
-
+import {RouterLink,RouterModule } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [BlogDetailsComponent , MatButtonModule , MatIconModule, MatInputModule , MatFormFieldModule , FormsModule , RouterModule],
+  imports: [BlogDetailsComponent , MatButtonModule , MatIconModule, MatInputModule , MatFormFieldModule , FormsModule , RouterModule,  RouterLink, ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
