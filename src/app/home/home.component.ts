@@ -9,10 +9,11 @@ import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field'
 import {RouterLink,RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [BlogDetailsComponent , MatButtonModule , MatIconModule, MatInputModule , MatFormFieldModule , FormsModule , RouterModule,  RouterLink, ],
+  imports: [BlogDetailsComponent , MatButtonModule , MatIconModule, CommonModule, MatInputModule , MatFormFieldModule , FormsModule , RouterModule,  RouterLink, ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

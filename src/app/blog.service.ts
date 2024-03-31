@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Blog } from './blog.interface';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +9,13 @@ import { Observable } from 'rxjs';
 export class BlogService {
 
 
-  private baseUrl = 'http://localhost:3000/blogs';
+  private baseUrl = 'http://localhost:3000/blogs/';
 
   constructor(private httpClient: HttpClient) {}
-
+  
+//this function returns observable type blog array
   getAllBlogs(): Observable<Blog[]> {
-    return this.httpClient.get<Blog[]>(this.baseUrl);
+    return this.httpClient.get<{blogs:Blog[]}>(this.baseUrl).pipe(map(res => res.blogs));
   }
 
   addBlog(payload: Blog) {
