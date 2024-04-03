@@ -14,8 +14,9 @@ export class BlogService {
   constructor(private httpClient: HttpClient) {}
   
 //this function returns observable type blog array
+  
   getAllBlogs(): Observable<Blog[]> {
-    return this.httpClient.get<{blogs:Blog[]}>(this.baseUrl).pipe(map(res => res.blogs));
+    return this.httpClient.get<Blog[]>(this.baseUrl);
   }
 
   addBlog(payload: Blog) {

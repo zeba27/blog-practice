@@ -1,4 +1,5 @@
 <div>
+  <div class="bg">
     <div class="container">
       <a mat-raised-button style="margin-right: 25px" routerLink="/add-blog">Add Blog</a>
       <a mat-raised-button style="margin-right: 25px" routerLink="/home">Blog List</a>
@@ -9,5 +10,5 @@
       <app-blog-details [blog]="blog" (blogDeleted)="deleteBlog($event)"></app-blog-details>
       }
     </div>
-
+</div>
   </div>
