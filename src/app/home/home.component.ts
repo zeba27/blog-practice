@@ -31,6 +31,6 @@ export class HomeComponent {
   }
   
   deleteBlog(id: string) {
-    this.allBlogs = this.allBlogs.filter((blog) => blog.id !== id);
+    this.allBlogs = this.allBlogs.filter((blog) => blog._id !== id);
   }
 }

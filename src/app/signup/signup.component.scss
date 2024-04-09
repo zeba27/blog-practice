@@ -16,6 +16,14 @@
         display: flex;
         justify-content: center;
     }
+    .blog-form {
+        margin-inline: 500px;
+        margin-block: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: min(100%, 700px);
+      }
     
     
     }

@@ -29,9 +29,9 @@ export class BlogDetailsComponent {
   ) {}
 
   deleteBlog() {
-    this.blogService.deleteBlog(this.blog.id || '').subscribe({
+    this.blogService.deleteBlog(this.blog._id || '').subscribe({
       next: () => {
-        this.blogDeleted.emit(this.blog.id);
+        this.blogDeleted.emit(this.blog._id);
       },
       error: (err) => {
         this.snackBar.open('Something went wrong');
