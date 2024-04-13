@@ -55,4 +55,8 @@ ngOnInit(): void {
     });
     
   }
+
+  navigeteTo(path:string){
+    this.router.navigateByUrl(path);
+  }
 }

@@ -3,7 +3,7 @@
     <div class="container">
       <a mat-raised-button style="margin-right: 25px" routerLink="/add-blog">Add Blog</a>
       <a mat-raised-button style="margin-right: 25px" routerLink="/home">Blog List</a>
-      <a mat-raised-button routerLink="/login">Log Out</a>
+      <a mat-raised-button (click)="logOut()">Log Out</a>
     </div>
     <div class="all-blogs">
       @for(blog of allBlogs; track $index){

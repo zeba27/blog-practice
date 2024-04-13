@@ -8,7 +8,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field'
-import {RouterLink,RouterModule } from '@angular/router';
+import {Router, RouterLink,RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-home',
@@ -22,9 +22,9 @@ export class HomeComponent {
   allBlogs: Blog[] = [];
   id!: string;
 
-  constructor(private blogService: BlogService) {}
+  constructor(private blogService: BlogService,private router:Router) {}
   ngOnInit() {
-    this.blogService.getAllBlogs().pipe(take(1)).subscribe((res) => {
+    this.blogService.getAllBlogs().pipe(take(1)).subscribe(async (res) => {
       this.allBlogs = res;
       console.log(this.allBlogs);
     });
@@ -32,5 +32,10 @@ export class HomeComponent {
   
   deleteBlog(id: string) {
     this.allBlogs = this.allBlogs.filter((blog) => blog._id !== id);
+  }
+
+  logOut(){
+    localStorage.removeItem("token");
+    this.router.navigateByUrl('/login');
   }
 }

@@ -1,8 +1,17 @@
 :host {
+    .containersignup{
+        background-color: white;
+        //width: 80%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
     .container{
         display: flex;
         justify-content: center;
-      
     }
     .bg{
         background-color: rgba(176, 247, 223, 0.897);
@@ -11,7 +20,20 @@
         width: 30%;
         opacity: 90%;
 
-
     }
+    .btn{
+        margin-bottom: 10%;
+        display: flex;
+        justify-content: center;
+    }
+    .blog-form {
+        margin-inline: 500px;
+        margin-block: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: min(100%, 700px);
+      }
+
     
     }
