@@ -16,5 +16,8 @@ export class LoginService {
   login(Login: Login): Observable<LoginResponce> {
     return this.httpClient.post(this.baseUrl, Login);
   }
+  isAuthenticated(): boolean{
+    return localStorage.getItem('token') ? true : false
+  }
 
 }
